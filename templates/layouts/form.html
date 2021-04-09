@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Schoolish</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+	<link type="text/css" rel="stylesheet" href="/static/styles.css">
+	{% if(request.endpoint == 'index') %}
+	<link rel="stylesheet" href="/static/home.css">
+	{% endif %}
+	
+</head>
+<body>
+<section id="header">
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">Schoolish</a>
+        <div class="mr-auto"></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <button class="btn mr-2" type="button" data-toggle="collapse" data-target="#search-bar" aria-expanded="false" aria-controls="search-bar">
+            <i class="fas fa-search"></i>
+        </button>
+  
+          
+        <button type="button" class="btn btn-outline-info mr-2">Login</button>
+        <button type="button" class="btn btn-info mr-2">Sign In</button>
+      </nav>
+</section>
+<div id="banner" class="container-fluid">
+    <div class="my-2">
+	<div class="collapse" id="search-bar">
+        <form class="form-horizontal my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search">
+        </form>
+    </div>
+</div>
+</div>
+<section id="main" class="container-fluild row">
+	<div class="container col-3"></div>
+	<div class="container col-6">
+	{% block content%}
+	{% endblock %}
+	</div>
+	<div class="container col-3"></div>
+</section>
+<section class="border-top">
+	<div class="container row">
+		<div class="col-6 col-md">
+			<h5>Made by Abed Nawafleh</h5>
+		</div>
+		<div class="col-6 col-md">
+            <h5>Links</h5>
+            <ul class="list-unstyled text-small">
+              <li>
+              	<i class="fab fa-facebook-square fa-lg"></i>
+              	<a class="text-muted" href="#">Facebook</a>
+              </li>
+              <li>
+              	<i class="fab fa-twitter-square fa-lg"></i>
+              	<a class="text-muted" href="#">Twitter</a>
+              </li>
+              <li>
+              	<i class="fab fa-instagram-square fa-lg"></i>
+              	<a class="text-muted" href="#">Instagram</a>
+              </li>
+            </ul>
+          </div>
+	</div>
+</section>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

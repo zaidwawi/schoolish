@@ -1,0 +1,29 @@
+{% extends 'layouts/form.html' %}
+{% block content %}
+  <div class="form-wrapper">
+    <form method="post" class="form">
+      <h3 class="form-heading">Post new question</h3>
+      <div class="form-group">
+        <label for="title">Title</label>
+        {{ form.title(class_ = 'form-control',autofocus=true) }}
+      </div>
+      <div class="form-group">
+        <label for="grade">Grade</label>
+        {{ form.grade(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        {{ form.subject(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for='question'>Question</label>
+        {{ form.question(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for='tags'>Tags</label>
+        {{ form.tag(class_ = 'form-control', autofocus = true)}}
+      </div>
+
+    </form>
+  </div>
+{% endblock %}
