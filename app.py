@@ -27,6 +27,13 @@ def create_app(test_config=None):
   	form = QuestionForm()
   	return render_template('forms/new_question.html', form= form)
 
+  @app.route('/questions/search',methods=['POST'])
+  def search_questions():
+    search_term = request.form.get('search_term','')
+    results = Questions.query.filter(Questions.title.ilike(f'%{search_term}%'))
+
+    response = results
+    return render_template('pages/search_questions.html',results = response)
 
   return app
 
